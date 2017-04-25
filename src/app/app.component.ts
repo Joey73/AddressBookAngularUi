@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Address Book Angular UI';
+  contacts = 'Kontake';
+  details = 'Details';
 }
