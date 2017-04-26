@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
-import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import {Contact} from './contact';
+import { Contact } from './contact';
+import { MockDatenService } from "app/services/mock-daten.service";
 
 @Injectable()
 export class ContactService {
-  url = 'api/customers';
 
-  constructor(private http: Http) { }
+  constructor(private mockDatenService: MockDatenService) {
+  }
 
-  getCustomers(): Promise<Contact[]> {
-    return this.http.get(this.url)
-      .toPromise()
-      .then((res) => res.json().data);
+  getContacts(): Contact[] {
+    return this.mockDatenService.getContacts();
   }
 }

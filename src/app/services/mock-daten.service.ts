@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 
-import {InMemoryDbService} from 'angular-in-memory-web-api';
 import {Contact} from './contact';
 
 @Injectable()
-export class MockDatenService implements InMemoryDbService {
-  createDb(): {} {
-    const contacts: Contact[] = [
+export class MockDatenService {
+  getContacts(): Contact[] {
+    return [
       {
         id: 1,
         firstname: 'Testfirstname1',
@@ -41,8 +40,6 @@ export class MockDatenService implements InMemoryDbService {
         phone: '4711'
       }
     ];
-
-    return {contacts};
   }
 
   constructor() { }

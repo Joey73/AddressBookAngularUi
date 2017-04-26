@@ -17,9 +17,6 @@ export class ContactListComponent implements OnInit {
   }
 
   private getContacts() {
-    this.contactService.getCustomers()
-      .then((contacts) => {
-        this.contacts = contacts;
-      });
+    this.contacts = this.contactService.getContacts();
   }
 }

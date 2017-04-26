@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContactService } from "app/services/contact.service";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Address Book Angular UI';
-  contacts = 'Kontake';
-  details = 'Details';
+
+  // Dependency Injection (DI)
+  constructor(private contactService: ContactService) {
+  }
+
+  ngOnInit(): void {
+  }
 }

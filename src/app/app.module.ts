@@ -9,20 +9,22 @@ import {environment} from '../environments/environment';
 import {InMemoryBackendConfigArgs, InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {MockDatenService} from './services/mock-daten.service';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
+import { TableViewComponent } from './components/table-view/table-view.component';
+import { ContactService } from "app/services/contact.service";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactListComponent
+    ContactListComponent,
+    TableViewComponent
   ],
   imports: [
-    InMemoryWebApiModule.forRoot(MockDatenService),
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ContactService, MockDatenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
