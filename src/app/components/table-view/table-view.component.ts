@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Contact } from '../../services/contact';
 
 @Component({
   selector: 'app-table-view',
@@ -9,6 +10,8 @@ export class TableViewComponent implements OnInit {
   @Input() items;
   @Output() emitEvent = new EventEmitter();
   @Output() emitEditEvent = new EventEmitter();
+
+  selectedItem: any;
 
   constructor() { }
 
@@ -21,5 +24,10 @@ export class TableViewComponent implements OnInit {
 
   editEvent(item) {
     this.emitEditEvent.emit(item);
+  }
+
+  onSelect(item): void {
+    console.log('Contact selected: ' + item.id);
+    this.selectedItem = item;
   }
 }
