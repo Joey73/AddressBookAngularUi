@@ -2,7 +2,7 @@
   <li *ngFor="let item of items"
     [class.selected]="item === selectedItem"
     (click)="onSelect(item)">
-    <span class="badge">{{item.id}}</span>{{item.lastname}}
+    <span class="badge">{{item.id}}</span>{{item.firstname}} {{item.lastname}}
   </li>
 </ul>
 <div *ngIf="selectedItem">
