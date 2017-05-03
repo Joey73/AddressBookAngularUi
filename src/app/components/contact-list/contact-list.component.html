@@ -1,2 +1,2 @@
 <h3>Contact-List</h3>
-<app-table-view [items]="contacts"></app-table-view>
+<app-table-view [items]="contacts" (tableViewItemSelectedEventEmitter)="onItemSelected($event)"></app-table-view>

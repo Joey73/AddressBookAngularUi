@@ -11,13 +11,15 @@ import {MockDatenService} from './services/mock-daten.service';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { TableViewComponent } from './components/table-view/table-view.component';
 import { ContactService } from "app/services/contact.service";
+import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
-    TableViewComponent
+    TableViewComponent,
+    ContactDetailsComponent
   ],
   imports: [
     BrowserModule,

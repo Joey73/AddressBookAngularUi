@@ -8,26 +8,15 @@ import { Contact } from '../../services/contact';
 })
 export class TableViewComponent implements OnInit {
   @Input() items;
-  @Output() emitEvent = new EventEmitter();
-  @Output() emitEditEvent = new EventEmitter();
-
-  selectedItem: any;
+  @Output() tableViewItemSelectedEventEmitter = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  tableEvent(item) {
-    this.emitEvent.emit(item);
-  }
-
-  editEvent(item) {
-    this.emitEditEvent.emit(item);
-  }
-
   onSelect(item): void {
     console.log('Contact selected: ' + item.id);
-    this.selectedItem = item;
+    this.tableViewItemSelectedEventEmitter.emit(item);
   }
 }

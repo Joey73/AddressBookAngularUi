@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ContactService } from "app/services/contact.service";
 
 @Component({
@@ -8,11 +8,17 @@ import { ContactService } from "app/services/contact.service";
 })
 export class AppComponent {
   title = 'Address Book Angular UI';
+  @Input() item: any;
 
   // Dependency Injection (DI)
   constructor(private contactService: ContactService) {
   }
 
   ngOnInit(): void {
+  }
+
+  private onItemSelected(item: any) {
+    console.log('Contact selected: ' + item.id);
+    this.item = item;
   }
 }
