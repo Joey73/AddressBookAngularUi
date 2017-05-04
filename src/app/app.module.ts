@@ -12,6 +12,7 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
 import { TableViewComponent } from './components/table-view/table-view.component';
 import { ContactService } from "app/services/contact.service";
 import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ContactDetailsComponent } from './components/contact-details/contact-de
     AppComponent,
     ContactListComponent,
     TableViewComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

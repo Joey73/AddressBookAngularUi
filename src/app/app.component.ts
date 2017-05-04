@@ -7,7 +7,6 @@ import { ContactService } from "app/services/contact.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Address Book Angular UI';
   @Input() item: any;
 
   // Dependency Injection (DI)
